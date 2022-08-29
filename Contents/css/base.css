@@ -69,27 +69,27 @@ table td {
   height: 40px;
   overflow: hidden;
   cursor: hand;
-  background: url("/Contents/viewer-ie7/img/buttons/Btn_ImageDownload_Default.png")
+  background: url("/viewer-ie7/Contents/img/buttons/Btn_ImageDownload_Default.png")
     no-repeat;
 }
 .btnImg:link {
-  background: url("/Contents/viewer-ie7/img/buttons/Btn_ImageDownload_Default.png")
+  background: url("/viewer-ie7/Contents/img/buttons/Btn_ImageDownload_Default.png")
     no-repeat;
 }
 .btnImg:visited {
-  background: url("/Contents/viewer-ie7/img/buttons/Btn_ImageDownload_Default.png")
+  background: url("/viewer-ie7/Contents/img/buttons/Btn_ImageDownload_Default.png")
     no-repeat;
 }
 .btnImg:active {
-  background: url("/Contents/viewer-ie7/img/buttons/Btn_ImageDownload_Active.png")
+  background: url("/viewer-ie7/Contents/img/buttons/Btn_ImageDownload_Active.png")
     no-repeat;
 }
 .btnImg:hover {
-  background: url("/Contents/viewer-ie7/img/buttons/Btn_ImageDownload_Hover.png")
+  background: url("/viewer-ie7/Contents/img/buttons/Btn_ImageDownload_Hover.png")
     no-repeat;
 }
 .btnImg.disable {
-  background: url("/Contents/viewer-ie7/img/buttons/Btn_ImageDownload_Disabled.png")
+  background: url("/viewer-ie7/Contents/img/buttons/Btn_ImageDownload_Disabled.png")
     no-repeat;
 }
 
@@ -116,12 +116,12 @@ table td {
 .selectBox .optionNow .col1 {
   width: 5px;
   height: 38px;
-  background: url("/Contents/viewer-ie7/img/selectBox/left.gif") no-repeat;
+  background: url("/viewer-ie7/Contents/img/selectBox/left.gif") no-repeat;
 }
 .selectBox .optionNow .col2 {
   min-width: 20px;
   height: 38px;
-  background: url("/Contents/viewer-ie7/img/selectBox/center.gif");
+  background: url("/viewer-ie7/Contents/img/selectBox/center.gif");
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -130,7 +130,7 @@ table td {
 .selectBox .optionNow .col3 {
   width: 26px;
   height: 38px;
-  background: url("/Contents/viewer-ie7/img/selectBox/right.gif") no-repeat;
+  background: url("/viewer-ie7/Contents/img/selectBox/right.gif") no-repeat;
 }
 .selectBox .options {
   display: none;
@@ -161,7 +161,7 @@ table td {
   width: 88px;
   height: 32px;
   overflow: hidden;
-  background: url("/Contents/viewer-ie7/img/btnLayer.png") no-repeat;
+  background: url("/viewer-ie7/Contents/img/btnLayer.png") no-repeat;
   border: none;
   padding: 0;
   margin: 0;
