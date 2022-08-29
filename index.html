@@ -1,0 +1,270 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>IE7 HTML4</title>
+<link rel="stylesheet" type="text/css" href="/Contents/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/Contents/css/base.css">
+<link rel="stylesheet" type="text/css" href="/Contents/css/site.css">
+</head>
+<body onselectstart="return false" ondragstart="return false">
+<div class="wrap">
+    <table class="top_table">
+        <tr>
+            <td style="position:relative;width:136px;border:1px solid #EFEFEF;vertical-align: top;z-index:99999;background-color:#FFFFFF;">
+                <table class="inner_table titleLine" style="margin:0 auto;">
+                    <tr>
+                        <td>
+                            <table class="noLine" style="width:89px;height:22px;">
+                                <tr>
+                                    <td class="PageIndexTitle" style="width:34px;">Page</td>
+                                    <td style="min-width:30px;padding-top:20px;">
+                                        <form name="frm" id="frm" method="get" onsubmit="return gotoPage()">
+                                         <input type="text" name="CurPage" id="CurPage" value="1" class="hidden-input center" style="width:30px;height:21px;padding-top:3px;background:url('/Contents/img/PaginationInputBG.png') no-repeat;" />
+                                        </form>
+                                    </td>
+                                    <td style="min-width:25px;text-align:left;">/ <span id="TotPage">1</span></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="inner_table" style="margin:0 auto;">
+                    <tr>
+                        <td style="vertical-align:top;">
+                            <table class="noLine PageContentListItems" id="PageContentList">
+                             </table>
+                        </td>
+                    </tr>
+                </table>
+                <div style="position:fixed;bottom:0px;width:136px;left:0;background-color:#FFFFFF;">
+                    <table class="inner_table" style="width:100%;">
+                        <tr>
+                            <td style="height:11px;"></td>
+                            <td style="height:11px;"></td>
+                        </tr>
+                        <tr>
+                            <td style="border-bottom:1px solid #EBECF0;"></td>
+                            <td style="border-bottom:1px solid #EBECF0;"></td>
+                        </tr>
+                        <tr>
+                            <td style="height:11px;"></td>
+                            <td style="height:11px;"></td>
+                        </tr>
+                        <tr>
+                            <td style="height:24px;cursor:hand;" onclick="javascript:fnAgoPage();">
+                                <img src="/Contents/img/arrow_left.png" alt="" style="margin:0 auto;" />
+                            </td>
+                            <td style="border-left:1px solid #ebecf0;cursor:hand;" onclick="javascript:fnNextPage();">
+                                <img src="/Contents/img/arrow_right.png" alt="" style="margin:0 auto;" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height:8px;"></td>
+                            <td style="height:8px;"></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td style="vertical-align:top;height:100%;">
+                <table class="inner_table" style="width:100%;border-right:1px solid #EFEFEF;height:100%;">
+                    <tr>
+                        <td style="position:relative;vertical-align:middle;height:64px;border-bottom:1px solid #EFEFEF;text-align:left;padding-left:20px;z-index:99999;background-color:#FFFFFF;">
+                            <div class="titleLine" style="width:100%;visibility: hidden;">
+                                <table class="inner_table" style="width:100%;">
+                                    <tr>
+                                        <td style="text-align:left;">
+                                            <table class="inner_table">
+                                                <tr>
+                                                    <td id="view_data_title">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <table class="inner_table">
+                                                            <tr>
+                                                                <td id="view_data_code">&nbsp;</td>
+                                                                <td><span style="color:#EBECF0;">|</span></td>
+                                                                <td id="view_data_description">&nbsp;</td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="text-align:right;">
+                                            <input id="view_data_btnImg" type="button" class="btnImg" style="display:none;" onclick="fnNowFileDownload()" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="position:relative;vertical-align:middle;height:64px;border-bottom:1px solid #EFEFEF;text-align:left;z-index:99999;background-color:#FFFFFF;">
+                            <div class="commandLine">
+                                <table class="inner_table" style="width:100%;">
+                                    <tr>
+                                        <td style="padding-left:16px;text-align:left;">
+                                            <table>
+                                                <tr>
+                                                    <td style="padding-top:6px;"><p>배율</p></td>
+                                                    <td>
+                                                        <div class="selectBox" name="magnifier" id="magnifier" value="100%" style="min-width:110px;height:38px;">
+                                                            <div class="optionNow">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td class="col1"></td>
+                                                                        <td class="col2"><div id="magnifier_Value" class="">100%<div></td>
+                                                                        <td class="col3"></td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <div class="options abs">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td style="width:14px;height:11px;"><img src="/Contents/img/selectBox/itemsTopLeft.gif" /></td>
+                                                                        <td style="height:11px;background:url('/Contents/img/selectBox/itemsTopCenter.gif') no-repeat;"></td>
+                                                                        <td style="width:14px;height:11px;"><img src="/Contents/img/selectBox/itemsTopRight.gif" /></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleLeft.gif') repeat-y;"></td>
+                                                                        <td style="background-color:#FFFFFF;padding:8px 8px 8px 8px;cursor:hand" onclick="fnChangeValue('magnifier',this);" value="+5%">현재 배율에서 +5%</td>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleRight.gif') repeat-y;"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleLeft.gif') repeat-y;"></td>
+                                                                        <td style="background-color:#FFFFFF;padding:8px 8px 8px 8px;cursor:hand" onclick="fnChangeValue('magnifier',this);" value="-5%">현재 배율에서 -5%</td>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleRight.gif') repeat-y;"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:14px;height:7px;"><img src="/Contents/img/selectBox/itemsLineLeft.gif" /></td>
+                                                                        <td style="height:7px;background:url('/Contents/img/selectBox/itemsLineCenter.gif');"></td>
+                                                                        <td style="width:14px;height:7px;"><img src="/Contents/img/selectBox/itemsLineRight.gif" /></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleLeft.gif') repeat-y;"></td>
+                                                                        <td style="background-color:#FFFFFF;padding:8px 8px 8px 8px;cursor:hand" onclick="fnChangeValue('magnifier',this);" value="10%">10%</td>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleRight.gif') repeat-y;"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleLeft.gif') repeat-y;"></td>
+                                                                        <td style="background-color:#FFFFFF;padding:8px 8px 8px 8px;cursor:hand" onclick="fnChangeValue('magnifier',this);" value="20%">20%</td>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleRight.gif') repeat-y;"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleLeft.gif') repeat-y;"></td>
+                                                                        <td style="background-color:#FFFFFF;padding:8px 8px 8px 8px;cursor:hand" onclick="fnChangeValue('magnifier',this);" value="30%">30%</td>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleRight.gif') repeat-y;"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleLeft.gif') repeat-y;"></td>
+                                                                        <td style="background-color:#FFFFFF;padding:8px 8px 8px 8px;cursor:hand" onclick="fnChangeValue('magnifier',this);" value="50%">50%</td>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleRight.gif') repeat-y;"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleLeft.gif') repeat-y;"></td>
+                                                                        <td style="background-color:#FFFFFF;padding:8px 8px 8px 8px;cursor:hand" onclick="fnChangeValue('magnifier',this);" value="66%">66%</td>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleRight.gif') repeat-y;"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleLeft.gif') repeat-y;"></td>
+                                                                        <td style="background-color:#FFFFFF;padding:8px 8px 8px 8px;cursor:hand" onclick="fnChangeValue('magnifier',this);" value="100%">100%</td>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleRight.gif') repeat-y;"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleLeft.gif') repeat-y;"></td>
+                                                                        <td style="background-color:#FFFFFF;padding:8px 8px 8px 8px;cursor:hand" onclick="fnChangeValue('magnifier',this);" value="200%">200%</td>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleRight.gif') repeat-y;"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleLeft.gif') repeat-y;"></td>
+                                                                        <td style="background-color:#FFFFFF;padding:8px 8px 8px 8px;cursor:hand" onclick="fnChangeValue('magnifier',this);" value="300%">300%</td>
+                                                                        <td style="width:14px;background:url('/Contents/img/selectBox/itemsMiddleRight.gif') repeat-y;"></td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width:64px"><img src="/Contents/img/btnReset.png" onsrc="/Contents/img/btnReset_on.png" alt="" class="btnEvent btnImageOn" style="width:64px" onclick="fnReset();" /></td>
+                                                    <td style="width:64px"><img src="/Contents/img/btnAutoWidth.png" onsrc="/Contents/img/btnAutoWidth_on.png" alt="" class="btnEvent btnImageOn" style="width:64px" onclick="fnAutoSize('width');" /></td>
+                                                    <td style="width:64px"><img src="/Contents/img/btnAutoHeight.png" onsrc="/Contents/img/btnAutoHeight_on.png" alt="" class="btnEvent btnImageOn" style="width:64px" onclick="fnAutoSize('height');" /></td>
+                                                    <td style="width:64px"><img id="selection" src="/Contents/img/btnSelection.png" onsrc="/Contents/img/btnSelection_on.png" alt="" class="btnEvent" style="width:64px" onclick="fnSelectFocus(this);" /></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="width:33%;">
+                                            <table style="margin:0 auto;">
+                                                <tr>
+                                                    <td style="padding-top:6px;"><p>회전</p></td>
+                                                    <td>
+                                                        <div class="updownRangeBox">
+                                                            <input type="text" name="rotate" id="rotate" class="hidden-input" value="0" onkeydown="fnRotate(this.id)" />
+                                                            <div style="font-size:1.3em;">˚</div>
+                                                            <input type="button" class="hideBtn top" style="width:18px;height:12px;" onclick="fnRotate('rotate', 38)" />
+                                                            <input type="button" class="hideBtn bottom" style="width:18px;height:12px;" onclick="fnRotate('rotate', 40)" />
+                                                        </div>
+                                                    </td>
+                                                    <td style="width:64px"><img src="/Contents/img/btnRotateAsc.png" onsrc="/Contents/img/btnRotateAsc_on.png" alt="" class="btnEvent btnImageOn" style="width:64px" onclick="fnRotateValue('rotate',90);" /></td>
+                                                    <td style="width:64px"><img src="/Contents/img/btnRotateDesc.png" onsrc="/Contents/img/btnRotateDesc_on.png" alt="" class="btnEvent btnImageOn" style="width:64px" onclick="fnRotateValue('rotate',-90);" /></td>
+                                                </tr>
+                                            </table>
+                                            
+                                        </td>
+                                        <td style="text-align:right;">
+                                            <table>
+                                                <tr>
+                                                    <td style="padding-top:6px;"><p>표시 항목</p></td>
+                                                    <td><button type="button" id="btnOver1" class="btnOver on" onclick="fnOverlay(this, 'number');" onmouseover="fnDisplay('ui_tooltip_02', true);" onmouseout="fnDisplay('ui_tooltip_02', false);">인식번호 <span>ON</span></button></td>
+                                                    <td><button type="button" id="btnOver2" class="btnOver on" onclick="fnOverlay(this, 'item');" onmouseover="fnDisplay('ui_tooltip_04', true);" onmouseout="fnDisplay('ui_tooltip_04', false);">인식항목 <span>ON</span></button></td>
+                                                    <td><button type="button" id="btnOver3" class="btnOver on" onclick="fnOverlay(this, 'area');" onmouseover="fnDisplay('ui_tooltip_03', true);" onmouseout="fnDisplay('ui_tooltip_03', false);">인식영역 <span>ON</span></button></td>
+                                                    <td><button type="button" id="btnOver4" class="btnOver on" onclick="fnOverlay(this, 'result');" onmouseover="fnDisplay('ui_tooltip_05', true);" onmouseout="fnDisplay('ui_tooltip_05', false);">인식결과 <span>ON</span></button></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="prescriptionViewEvent" style="vertical-align:top;height:auto;background-color:#d4d4d4;padding:20px 0 20px 0;overflow-x: hidden;overflow-y: scroll;z-index:10;">
+                            <div id="ui_tooltip_01" class="abs" style="display:none;left:150px;top:148px;">
+                                <img src="/Contents/img/Tooltip.png" alt="" />
+                            </div>
+                            <div id="ui_tooltip_02" class="abs" style="display:none;right:30px;top:148px;">
+                                <img src="/Contents/img/Tooltip1.png" alt="" />
+                            </div>
+                            <div id="ui_tooltip_03" class="abs" style="display:none;right:30px;top:148px;">
+                                <img src="/Contents/img/Tooltip2.png" alt="" />
+                            </div>
+                            <div id="ui_tooltip_04" class="abs" style="display:none;right:30px;top:148px;">
+                                <img src="/Contents/img/Tooltip3.png" alt="" />
+                            </div>
+                            <div id="ui_tooltip_05" class="abs" style="display:none;right:30px;top:148px;">
+                                <img src="/Contents/img/Tooltip4.png" alt="" />
+                            </div>
+                            <div id="prescriptionView" class="viewLayer" style="left:0px;top:0px;z-index:10;min-height:800px;">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="hiddenProc" style="display:none;">
+<form name="frm" id="frm">
+<input type="hidden" name="PrescriptionID" id="PrescriptionID" value="" />
+</form>
+<iframe id="hiddenLayer" name="hiddenLayer" style="display:none;" src="about:blank"></iframe>
+</div>
+
+<script type="text/javascript" src="/Contents/js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="/Contents/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/Contents/js/jquery.rotate.js"></script>
+<script type="text/javascript" src="/Contents/js/base.js"></script>
+<script type="text/javascript" src="/Contents/js/site.js"></script>
+<script type="text/javascript" src="/Contents/js/data.js"></script>
+<!-- 앱 실행 이후에 data.js 파일에 있는 init 함수를 실행합니다 -->
+</body>
+</html>
